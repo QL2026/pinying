@@ -32,12 +32,6 @@ export const ConfusedChallenge: React.FC<ConfusedChallengeProps> = ({
     setIsIncorrect(false);
     setHasPlayedText(false);
     stopSpeech();
-
-    // Auto-trigger speaking target word so kids hear it immediately
-    const timer = setTimeout(() => {
-      handlePlayWord();
-    }, 450);
-    return () => clearTimeout(timer);
   }, [currentIdx]);
 
   const handlePlayWord = () => {
@@ -232,6 +226,15 @@ export const ConfusedChallenge: React.FC<ConfusedChallengeProps> = ({
           >
             <span>{isDone ? '下一关 👉' : '跳过去，下一关'}</span>
           </button>
+        </div>
+
+        <div className="mt-6 p-4 bg-purple-50/60 rounded-2xl border border-purple-100 text-xs text-purple-950 leading-relaxed">
+          <span className="font-extrabold block text-purple-900 mb-1">💡 听到没声音？请检查：</span>
+          <ul className="list-disc list-inside space-y-1 text-purple-950/90">
+            <li><b>物理静音键</b>：请确认手机侧边的物理静音开关<b>没有</b>露出橙红色。</li>
+            <li><b>点击喇叭播放</b>：请手动点击上方的紫粉色<b>“听听声音”</b>大按钮来触发播放。</li>
+            <li>安装多媒体音量加到合适大小。或戴上耳机游玩。</li>
+          </ul>
         </div>
       </div>
     </div>

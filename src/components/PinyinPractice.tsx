@@ -54,12 +54,6 @@ export const PinyinPractice: React.FC<PinyinPracticeProps> = ({
     setHasRecorded(false);
     setPlaySuccessTick(false);
     stopSpeech();
-    
-    // Automatically speak when children land on a new card so they are guided
-    const timer = setTimeout(() => {
-      handleListen();
-    }, 450);
-    return () => clearTimeout(timer);
   }, [activeIndex]);
 
   const handleListen = () => {
@@ -400,6 +394,15 @@ export const PinyinPractice: React.FC<PinyinPracticeProps> = ({
           
           <div className="mt-2 text-center text-xs text-slate-400">
             {!hasListened && "⚠️ 需要先点击‘听一听标准音’，然后再读，才能得奖"}
+          </div>
+
+          <div className="mt-4 p-4.5 bg-indigo-50/60 rounded-2xl border border-indigo-100/80 text-xs text-indigo-950 leading-relaxed">
+            <span className="font-extrabold block text-indigo-900 mb-1">💡 手机打开没有声音？请检查：</span>
+            <ul className="list-disc list-inside space-y-1 text-indigo-900/90">
+              <li><b>物理静音开关</b>：请确认手机侧边的物理静音键（如苹果手机的拨动开关）<b>没有</b>露出橙红色。静音模式下浏览器会被完全禁音。</li>
+              <li><b>配合点击解锁</b>：手机浏览器出于安全考虑，禁止任何自动播放。请务必<b>点击“听一听标准音”等带有小喇叭的按钮</b>以手动激活语音。</li>
+              <li><b>系统媒体音量</b>：请按手机侧边的音量加按钮，把多媒体音量调高。部分手机的通话音量与多媒体音量不一致，建议戴上耳机体验。</li>
+            </ul>
           </div>
         </div>
       </div>
