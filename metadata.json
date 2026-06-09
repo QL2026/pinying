@@ -1,0 +1,6 @@
+{
+  "name": "拼音发音训练小游戏",
+  "description": "专为4-7岁幼小衔接儿童设计的拼音声母、韵母发音听音练习与跟读训练MVP应用。通过听辨挑战、标准发音跟读录音、星星奖励和家长进度简报，激发开口兴趣，锻炼听音辨音能力。",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
